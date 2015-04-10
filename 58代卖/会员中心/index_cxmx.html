@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>资金管理（查询明细）</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/layout_sy.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/bannercss.css" rel="stylesheet" type="text/css"/>
+<link href="css/layout_jbxx.css" rel="stylesheet" type="text/css"/>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/hgy.js"></script>
+<script src="../js/jquery.touchSlider.js"></script>
+
+<script src="../js/jquery.event.drag-1.5.min.js"></script>
+</head>
+<script>
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<body>
+<!--网页头部-->
+	<div class="header">
+    	<div class="head_wrap">
+        	<p>您好，欢迎来到58代卖</p>
+            <ul>
+            	<li class="wel"><a href="../登陆/index_dl.html">登陆</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="we"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页logo 搜索-->
+	<div class="search">
+    	<p title="58代卖"><img src="../images/tp3.jpg"/></p>
+        <div class="nav_list">
+        	<div class="sea">
+                <form>
+                    <input type="text" value="请输入关键字" class="inp_tex" onFocus="if (value =='请输入关键字'){value =''}" onBlur="if (value ==''){value='请输入关键字'}">
+                    <input type="submit" class="inp_sub" value="">
+                </form>
+            </div>
+            <ul>
+            	<li class="one">热门搜索：</li>
+                <li class="two"><a href="#">代卖优势</a></li>
+                <li class="two"><a href="#">成功案例</a></li>
+                <li class="two"><a href="#">创业秘籍</a></li>
+                <li class="two tree"><a href="#">商品大全</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页导航-->
+	<div class="nav">
+    	<div class="nav_wrap">
+        	<ul>
+            	<li class="sy"><a href="#">首页</a></li>
+                <li><a href="#">需求中心</a></li>
+                <li><a href="#">供应中心</a></li>
+                <li><a href="#">代卖管理</a></li>
+                <li><a href="#">实体店管理</a></li>
+                <li><a href="#">格子铺专区</a></li>
+                <li class="news"><a href="#">最新资讯</a>
+                	<div class="news_list">
+                    	<dl>
+                        	<dt><a href="#">最新活动</a></dt>
+                            <dt><a href="#">官方公告</a></dt>
+                            <dt><a href="#">热门文章</a></dt>
+                            <dt><a href="#">官方信息</a></dt>
+                           
+                        </dl>
+                    </div>
+                </li>
+                <li class="last"><a href="#">操作指南</a></li>
+            </ul>
+        </div>
+    </div>
+<!--我的位置-->
+<div class="position">
+	<ul class="nav_pos">
+    	<li style="padding-left:0;">您现在的位置：</li>
+        <li>58代卖</li>
+        <li>会员中心</li>
+        <li>我的店铺</li>
+        <li style="background:none;color:#cf211a;">购物订单管理</li>
+    </ul>
+</div>
+<!--网页主体内容--> 
+	<div class="main">
+         <div class="jbxx_con">
+             <!--基本信息左-->
+             <div class="jbxx_left">
+                  <ul>
+                       <li><a href="#" class="hover"><i>〉</i>会员服务</a></li>
+                       <li><a href="#"><i>〉</i>资金管理</a></li>
+                       <li><a href="#"><i>〉</i>管理账号</a></li>
+                  </ul>
+             </div>
+             <!--end 基本信息左-->
+             <!--基本信息右-->
+             <div class="jbxx_right">
+                  <p class="jbxx_rtop">
+                       <a href="#" class="hover">在线充值</a>
+                       <a href="#">充值</a>
+                       <a href="#">提现</a>
+                       <a href="#">查询明细</a>
+                       <div class="clear"></div>
+                  </p>
+                  <div class="cxmx_rbottom">
+                        <dl class="one">
+                            <dt>日期时间</dt>
+                            <dd class="tb">2014/11/11 22:20:19</dd>
+                            <dd class="bs">2014/11/8 18:58:19</dd>
+                            <dd>2014/11/8 18:58:19</dd>
+                            <dd class="bs">2014/11/8 18:58:19</dd>
+                            <dd>2014/11/8 18:58:19</dd>
+                            <dd class="bs">2014/11/8 18:58:19</dd>
+                            <dd>2014/11/8 18:58:19</dd>
+                            <dd class="bs">2014/11/8 18:58:19</dd>
+                            <dd>2014/11/8 18:58:19</dd>
+                            <dd class="bs">2014/11/8 18:58:19</dd>
+                            <dd>2014/11/8 18:58:19</dd>
+                            <dd class="tb2">2014/11/11 22:20:19</dd>
+                        </dl>
+                        <dl class="two">
+                            <dt>操作IP</dt>
+                            <dd class="tb">153.0.1.172</dd>
+                            <dd class="bs">153.0.1.172</dd>
+                            <dd>153.0.1.172</dd>
+                            <dd class="bs">153.0.1.172</dd>
+                            <dd>153.0.1.172</dd>
+                            <dd class="bs">153.0.1.172</dd>
+                            <dd>153.0.1.172</dd>
+                            <dd class="bs">153.0.1.172</dd>
+                            <dd>153.0.1.172</dd>
+                            <dd class="bs">153.0.1.172</dd>
+                            <dd>153.0.1.172</dd>
+                            <dd class="tb2">153.0.1.172</dd>
+                        </dl>
+                        <dl class="three">
+                            <dt>数量</dt>
+                            <dd class="tb">0.0100</dd>
+                            <dd class="bs">0.0100</dd>
+                            <dd>0.0100</dd>
+                            <dd class="bs">0.0100</dd>
+                            <dd>0.0100</dd>
+                            <dd class="bs">0.0100</dd>
+                            <dd>0.0100</dd>
+                            <dd class="bs">0.0100</dd>
+                            <dd>0.0100</dd>
+                            <dd class="bs">0.0100</dd>
+                            <dd>0.0100</dd>
+                            <dd class="tb2">0.0100</dd>
+                        </dl>
+                        <dl class="four">
+                            <dt>备注</dt>
+                            <dd class="tb">会员xiangyun的店铺订单DD2014111121542734[购买生效]，扣除金额-0.01</dd>
+                            <dd class="bs">余额充值,订单号:PN63550982006372962</dd>
+                            <dd>余额充值,订单号:PN635509820063729625</dd>
+                            <dd class="bs">余额充值,订单号:PN635509820063729625</dd>
+                            <dd>余额充值,订单号:PN635509820063729625</dd>
+                            <dd class="bs">余额充值,订单号:PN635509820063729625</dd>
+                            <dd>余额充值,订单号:PN635509820063729625</dd>
+                            <dd class="bs">余额充值,订单号:PN635509820063729625</dd>
+                            <dd>余额充值,订单号:PN635509820063729625</dd>
+                            <dd class="bs">余额充值,订单号:PN635509820063729625</dd>
+                            <dd>余额充值,订单号:PN635509820063729625</dd>
+                            <dd class="tb2">余额充值,订单号:PN635509820063729625</dd>
+                        </dl>
+                        <dl class="fiee">
+                            <dt>操作人</dt>
+                            <dd class="tb">xiangyun</dd>
+                            <dd class="bs"></dd>
+                            <dd></dd>
+                            <dd class="bs"></dd>
+                            <dd></dd>
+                            <dd class="bs"></dd>
+                            <dd></dd>
+                            <dd class="bs"></dd>
+                            <dd></dd>
+                            <dd class="bs"></dd>
+                            <dd></dd>
+                            <dd class="tb2"></dd>
+                        </dl>
+                        <dl class="size">
+                            <dt>查看</dt>
+                            <dd class="tb"><a href="#">查看</a></dd>
+                            <dd class="bs"><a href="#">查看</a></dd>
+                            <dd><a href="#">查看</a></dd>
+                            <dd class="bs"><a href="#">查看</a></dd>
+                            <dd><a href="#">查看</a></dd>
+                            <dd class="bs"><a href="#">查看</a></dd>
+                            <dd><a href="#">查看</a></dd>
+                            <dd class="bs"><a href="#">查看</a></dd>
+                            <dd><a href="#">查看</a></dd>
+                            <dd class="bs"><a href="#">查看</a></dd>
+                            <dd><a href="#">查看</a></dd>
+                            <dd class="tb2"><a href="#">查看</a></dd>
+                        </dl>
+                        <div class="clear"></div>
+                       <!--选页-->
+                            <div class="xuanye_d">
+                             <form>
+                                <p>共104条记录</p>
+                                <dl>
+                                    <dd><a href="#"><img src="../images/sanjiao_d.jpg"></a></dd>
+                                    <dd><a href="#"><img src="../images/sanjiao1_d.gif"></a></dd>
+                                    <dt><a href="#">1</a></dt>
+                                    <dt><a href="#">2</a></dt>
+                                    <dt><a href="#">3</a></dt>
+                                    <dt><a href="#">4</a></dt>
+                                    <dt><a href="#">5</a></dt>
+                                    <dt><a href="#">6</a></dt>
+                                    <dt><a href="#">.....</a></dt>
+                                    <dt><a href="#">11</a></dt>
+                                    <dd><a href="#"><img src="../images/sanjiao2_d.gif"></a></dd>
+                                    <dd><a href="#"><img src="../images/sanjiao3_d.jpg"></a></dd>
+                                </dl>
+                                <ul>
+                                    <li>转到第</li>
+                                    <li><input type="text" class="in_d"></li>
+                                    <li>页</li>
+                                    <li><span><a href="#" style="color:#fff;">确定</a></span></li>
+                                    
+                                </ul>
+                              </form>
+                            </div> 
+                  </div>
+             </div>	
+             <!--end基本信息右-->
+         
+		 </div>
+    </div>
+    <div class="clear"></div>
+<!--网页底部-->
+	<div class="footer">
+    	<div class="foot_wrap">
+        	
+        	<ul class="one">
+            	<li class="fir">新手指南</li>
+                <li><a href="#">操作指南</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">热门问题</a></li>
+            </ul>
+            <ul class="two">
+            	<li class="fir">供应指南</li>
+                <li><a href="#">设置店铺</a></li>
+                <li><a href="#">添加商品</a></li>
+                <li><a href="#">销售发货</a></li>
+            </ul>
+            <ul class="thr">
+            	<li class="fir">分销指南</li>
+                <li><a href="#">选货下单</a></li>
+                <li><a href="#">支付货款</a></li>
+                <li><a href="#">开始代卖</a></li>
+            </ul>
+            <ul class="four">
+            	<li class="fir">支付与提现</li>
+                <li><a href="#">提现方式</a></li>
+                <li><a href="#">充值说明</a></li>
+                <li><a href="#">支付方式</a></li>
+            </ul>
+            <ul class="five">
+            	<li class="fir">会员说明</li>
+                <li><a href="#">供应商</a></li>
+                <li><a href="#">分销商</a></li>
+                <li><a href="#">有问必答</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页底部分菜单-->
+	<div class="nav_foot">
+    	<div class="foot_con">
+            <div class="nav_footer">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">产品大全</a></li>
+                    <li><a href="#">供应中心</a></li>
+                    <li><a href="#">分销中心</a></li>
+                    <li><a href="#">格子铺专区</a></li>
+                    <li class="last"><a href="#">最新资讯</a></li>
+                </ul>
+            </div>
+            <div class="nav_footer_r">
+            	<ul>
+                	<li class="fir">代卖供货:</li>
+                    <li class="one"><a href="#">分销商代卖操作方法</a></li>
+                    <li class="one"><a href="#">店铺管理系统</a></li>
+                    <li class="one"><a href="#">进货流程</a></li>
+                    <li class="one"><a href="#">分销商入口</a></li>
+                    <li class="last one"><a href="#">供应入口</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+<!--网页底部版权-->
+	<div class="footer_last">
+    	<div class="foot_la_wrap">
+        	<div class="foot_con_wrap">
+            	<div class="copy_l">
+                	<ul>
+                    	<li>Copyright © 2013 xiangyunshangwu.com All Rights Reserved 58代卖版权所有</li>
+                        <li>ICP证：京ICP备13019928号</li>
+                    </ul>
+                </div>
+                <div class="safe">
+                	<ul>
+                    	<li><img src="../images/safe1.jpg"/><br/>卖家保证</li>
+                        <li><img src="../images/safe2.jpg"/><br/>商家认证</li>
+                        <li class="last"><img src="../images/safe3.jpg"/><br/>安全交易</li>
+                    </ul>
+                </div>
+                <p><img src="../images/tel.jpg"/></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html
+>

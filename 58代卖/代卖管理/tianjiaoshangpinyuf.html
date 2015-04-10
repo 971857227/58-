@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/layout_sy.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/bannercss.css" rel="stylesheet" type="text/css"/>
+<link href="css/daimaiguanli.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/hgy.js"></script>
+<script src="../js/jquery.touchSlider.js"></script>
+<script src="js/lanrenzhijia.js"></script>
+<script src="../js/jquery.event.drag-1.5.min.js"></script>
+</head>
+<script>
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<body>
+<!--网页头部-->
+	<div class="header">
+    	<div class="head_wrap">
+        	您好，欢迎来到58代卖
+            <ul>
+           	  <li class="wel"><a href="../登陆/index_dl.html">登陆</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="we"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页logo 搜索-->
+	<div class="search">
+    	<p title="58代卖"><img src="../images/tp3.jpg"/></p>
+        <div class="nav_list">
+        	<div class="sea">
+                <form>
+                    <input type="text" value="请输入关键字" class="inp_tex" onfocus="if (value =='请输入关键字'){value =''}" onblur="if (value ==''){value='请输入关键字'}">
+                    <input type="submit" class="inp_sub" value="">
+                </form>
+            </div>
+            <ul>
+            	<li class="one">热门搜索：</li>
+                <li class="two"><a href="#">代卖优势</a></li>
+                <li class="two"><a href="#">成功案例</a></li>
+                <li class="two"><a href="#">创业秘籍</a></li>
+                <li class="two tree"><a href="#">商品大全</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页导航-->
+	<div class="nav">
+    	<div class="nav_wrap">
+        	<ul>
+            	<li class="sy"><a href="#">首页</a></li>
+                <li><a href="#">需求中心</a></li>
+                <li><a href="#">供应中心</a></li>
+                <li><a href="#">代卖管理</a></li>
+                <li><a href="#">实体店管理</a></li>
+                <li><a href="#">格子铺专区</a></li>
+                <li class="news"><a href="#">最新资讯</a>
+                	<div class="news_list">
+                    	<dl>
+                        	<dt><a href="#">最新活动</a></dt>
+                            <dt><a href="#">官方公告</a></dt>
+                            <dt><a href="#">热门文章</a></dt>
+                            <dt><a href="#">官方信息</a></dt>
+                           
+                        </dl>
+                    </div>
+                </li>
+                <li class="last"><a href="#">操作指南</a></li>
+            </ul>
+        </div>
+    </div>
+<!--我的位置-->
+<div class="position">
+	<ul class="nav_pos">
+    	<li style="padding-left:0px;">您现在的位置：</li>
+        <li>58代卖</li>
+        <li>会员中心</li>
+        <li>我的店铺</li>
+        <li style="background:none;color:#cf211a;">购物订单管理</li>
+    </ul>
+</div>
+<!--网页主体内容--> 
+	<div class="main">
+      <!--内容左边-->
+		<div class="center_left">
+           <!--交易管理-->
+           
+            <div class="jiaoyi_d">
+                <p><b><img src="../images/jiao_d.png"></b>交易管理</p>
+                <ul>
+                    <li style="border-top:1px solid #efefef;" ><a href="index_daimaiguanli.html"><span></span>以批出货物</a></li>
+                    <li ><a href="dxzdhuopin.html"><span></span>代销中的货物</a></li>
+                    <li><a href="gongyingshangduizhang.html"><span></span>供应商对账</a></li>
+                </ul>
+            </div>
+           <!--管理商品-->
+            <div class="shangpin_d">
+                <p>管理商品</p>
+                <ul>
+                    <li style="border-top:1px solid #efefef;"  class="hover"><a href="tianjiajibenxinxi.html"><span></span>添加商品</a></li>
+                    <li><a href="guanlishangpin.html"><span></span>管理商品</a></li>
+                    <li><a href="guanlikucun.html"><span></span>管理库存</a></li>
+                </ul>
+            </div>
+           <!--店铺管理-->
+            <div class="guanli_d">
+                <p>店铺管理</p>
+                <ul>
+                    <li style="border-top:1px solid #efefef;" ><a href=""><span></span>查看我的店铺</a></li>
+                    <li><a href="dianpushezhe.html"><span></span>店铺基本设置</a></li>
+                </ul>
+            </div>
+        </div>
+	  <!--内容右边-->
+        <div class="center_right_d">
+        <!-- 衣服尺寸 鞋子尺寸 文胸尺寸 -->
+        
+            <div class="yifu_d">
+                 <ul>
+                     <li class="hover">衣服尺寸</li>
+                     <li>鞋子尺寸</li>
+                     <li>文胸尺寸</li>
+                 </ul>
+                 
+            </div>
+            <div class="cen_dai">
+                  <!--衣服内容-->
+                    <div class="cen_yu" style="display:block;">
+                       <form>
+                         <div class="cen_yifu">
+                              <div class="spa_d">
+                                  <p>
+                                 <span><a href="#">新增模板</a></span>
+                                 选择要编辑的模板：
+                                 <select>
+                                       <option>服装默认模板</option>
+                                       <option>服装默认模板</option>
+                                       <option>服装默认模板</option>
+                                       <option>服装默认模板</option>
+                                  </select>
+                                 </p>
+                              </div>
+                              <div class="cen_yufi1">
+                                  <p>模板名称：<input type="text" class="q_d"></p>
+                                  <div class="chichun">
+                                     <dl>
+                                         <dd>尺码</dd>
+                                         <dt><input type="checkbox" class="x_d"><i>身高(cm)</i></dt>
+                                         <dt><input type="checkbox" class="x_d"><i>体重(kg)</i></dt>
+                                         <dt><input type="checkbox" class="x_d"><i>腰围(cm)</i></dt>
+                                         <dt><input type="checkbox" class="x_d"><i>肩宽(CM)</i></dt>
+                                         <dt><input type="checkbox" class="x_d"><i>胸围(CM)</i></dt>
+                                         <dt><input type="checkbox" class="x_d"><i>臀围(CM)</i></dt>
+                                         <dt style="width:60px;"><input type="checkbox" class="x_d"><i>操作</i></dt>
+                                     </dl>
+                                  </div>
+                                  <div class="chichun_d">
+                                     <dl>
+                                         <dd><input type="text" class="k_d"></dd>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt style="width:60px;"><span>x</span></dt>
+                                     </dl>
+                                     <dl>
+                                         <dd><input type="text" class="k_d"></dd>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt style="width:60px;"><span>x</span></dt>
+                                     </dl>
+                                     <dl>
+                                         <dd><input type="text" class="k_d"></dd>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt style="width:60px;"><span>x</span></dt>
+                                     </dl>
+                                     <dl>
+                                         <dd><input type="text" class="k_d"></dd>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt><input type="text" class="dai_d" style="margin-left:5px;"><i>-</i><input type="text" class="dai_d"></dt>
+                                         <dt style="width:60px;"><span>x</span></dt>
+                                     </dl>
+                                  </div>
+                                  <div class="an_d">
+                                      <b><input type="submit" value="+增加一行" class="zeng_d"></b>
+                                      <i>备注：<input type="text" class="tes_d" value="需要特别说明的信息" onfocus="if (value =='需要特别说明的信息'){value =''}" onblur="if (value ==''){value='需要特别说明的信息'}"></i>
+                                  </div>
+                                  <div class="an_d1">
+                                      <b><input type="submit" value="保存" class="zeng_d1">
+                                      <input type="submit" value="取消" class="zeng_d1">
+                                      <input type="submit" value="恢复默认" class="zeng_d2"></b>
+                                  </div>
+                              </div>
+                         </div>
+                       </form> 
+                    </div>
+                  <!--鞋子内容-->
+                    <div class="cen_yu">
+                       <form>
+                         <div class="cen_xiezi" >
+                              <div class="spa_d">
+                                  <p>
+                                 <span><a href="#">新增模板</a></span>
+                                 选择要编辑的模板：
+                                 <select>
+                                       <option>鞋子默认模板</option>
+                                       <option>鞋子默认模板</option>
+                                       <option>鞋子默认模板</option>
+                                       <option>鞋子默认模板</option>
+                                  </select>
+                                 </p>
+                              </div>
+                              <div class="cen_xiezi1">
+                                  <p>模板名称：<input type="text" class="q_d"></p>
+                                  <div class="xiezi_d">
+                                      <dl>
+                                          <dd>欧码</dd>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="3"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="4"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="5"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="6"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="7"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="8"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="9"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="10"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="11"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="12"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="13"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="14"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="15"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="16"></dt>
+                                          <dt><input type="checkbox" class="fang_d"><input type="text" class="z_d" value="17"></dt>
+                                      </dl>
+                                  </div>
+                                  <div class="xiezi_d1">
+                                      <dl>
+                                          <dd>美码</dd>
+                                          <dt><input type="text" class="z_d" value="34"></dt>
+                                          <dt><input type="text" class="z_d" value="35"></dt>
+                                          <dt><input type="text" class="z_d" value="36"></dt>
+                                          <dt><input type="text" class="z_d" value="37"></dt>
+                                          <dt><input type="text" class="z_d" value="38"></dt>
+                                          <dt><input type="text" class="z_d" value="39"></dt>
+                                          <dt><input type="text" class="z_d" value="40"></dt>
+                                          <dt><input type="text" class="z_d" value="41"></dt>
+                                          <dt><input type="text" class="z_d" value="42"></dt>
+                                          <dt><input type="text" class="z_d" value="43"></dt>
+                                          <dt><input type="text" class="z_d" value="44"></dt>
+                                          <dt><input type="text" class="z_d" value="45"></dt>
+                                          <dt><input type="text" class="z_d" value="46"></dt>
+                                          <dt><input type="text" class="z_d" value="47"></dt>
+                                          <dt><input type="text" class="z_d" value="48"></dt>
+                                      </dl>
+                                  </div>
+                                  <div class="xiezi_d2">
+                                      <dl>
+                                          <dd><b>脚长(mm)</b></dd>
+                                          <dt><input type="text" class="z_d" value="216" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="220"></dt>
+                                          <dt><input type="text" class="z_d" value="221" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="225"></dt>
+                                          <dt><input type="text" class="z_d" value="226" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="230"></dt>
+                                          <dt><input type="text" class="z_d" value="231" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="235"></dt>
+                                          <dt><input type="text" class="z_d" value="236" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="240"></dt>
+                                          <dt><input type="text" class="z_d" value="241" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="245"></dt>
+                                          <dt><input type="text" class="z_d" value="241" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="250"></dt>
+                                          <dt><input type="text" class="z_d" value="251" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="255"></dt>
+                                          <dt><input type="text" class="z_d" value="256" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="260"></dt>
+                                          <dt><input type="text" class="z_d" value="261" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="265"></dt>
+                                          <dt><input type="text" class="z_d" value="266" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="270"></dt>
+                                          <dt><input type="text" class="z_d" value="271" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="275"></dt>
+                                          <dt><input type="text" class="z_d" value="276" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="280"></dt>
+                                          <dt><input type="text" class="z_d" value="281" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="285"></dt>
+                                          <dt><input type="text" class="z_d" value="286" style="margin-top:8px;"><i><img src="../images/xiajian.jpg"></i><input type="text" class="z_d" value="290"></dt>
+                                      </dl>
+                                  </div>
+                                  <div class="an_niu">
+                                      <b><input type="submit" value="+脚长批量增加1mm" class="zeng_d"><input type="submit" value="-脚长批量减1mm" class="zeng_d"></b>
+                                      <i>备注：<input type="text" class="tes_d" value="需要特别说明的信息" onfocus="if (value =='需要特别说明的信息'){value =''}" onblur="if (value ==''){value='需要特别说明的信息'}"></i>
+                                  </div>
+                                  <div class="an_niu1">
+                                      <b><input type="submit" value="保存" class="zeng_d1">
+                                      <input type="submit" value="取消" class="zeng_d1">
+                                      <input type="submit" value="恢复默认" class="zeng_d2"></b>
+                                  </div>
+                              </div>
+                         </div>
+                       </form>
+                    </div>
+                   <!--文胸内容-->
+                    <div class="cen_yu">
+                       <form>
+                         <div class="cen_wenxiong">
+                              <div class="spa_d">
+                                  <p>
+                                 <span><a href="#">新增模板</a></span>
+                                 选择要编辑的模板：
+                                 <select>
+                                       <option>文胸默认模板</option>
+                                       <option>文胸默认模板</option>
+                                       <option>文胸默认模板</option>
+                                       <option>文胸默认模板</option>
+                                  </select>
+                                 </p>
+                              </div>
+                              <div class="cen_wenxiong1">
+                                 <p>模板名称：<input type="text" class="q_d"></p>
+                                 <div class="wenxiong_d">
+                                     <dl>
+                                         <dd>美码</dd>
+                                         <dt>下胸围区间(cm)</dt>
+                                         <dt>上下胸围差(cm)</dt>
+                                         <dd>美码</dd>
+                                         <dt>下胸围区间(cm)</dt>
+                                         <dt>上下胸围差(cm)</dt>
+                                     </dl>
+                                 </div>
+                                 <div class="wenxiong_d1">
+                                     <dl>
+                                         <dd><input type="text" value="A70" class="d_d"></dd>
+                                         <dt><input type="text" value="72" class="d_dai1"><input type="text" value="68" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="12" class="d_dai1"><input type="text" value="10" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dd><input type="text" value="D70" class="d_d"></dd>
+                                         <dt><input type="text" value="72" class="d_dai1"><input type="text" value="68" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="20" class="d_dai1"><input type="text" value="18" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         
+                                         <dd><input type="text" value="A75" class="d_d"></dd>
+                                         <dt><input type="text" value="77" class="d_dai1"><input type="text" value="73" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="12" class="d_dai1"><input type="text" value="10" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dd><input type="text" value="D70" class="d_d"></dd>
+                                         <dt><input type="text" value="77" class="d_dai1"><input type="text" value="73" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="20" class="d_dai1"><input type="text" value="18" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         
+                                         <dd><input type="text" value="A80" class="d_d"></dd>
+                                         <dt><input type="text" value="82" class="d_dai1"><input type="text" value="78" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="12" class="d_dai1"><input type="text" value="10" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dd><input type="text" value="D80" class="d_d"></dd>
+                                         <dt><input type="text" value="82" class="d_dai1"><input type="text" value="78" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="20" class="d_dai1"><input type="text" value="18" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         
+                                         <dd><input type="text" value="A85" class="d_d"></dd>
+                                         <dt><input type="text" value="87" class="d_dai1"><input type="text" value="83" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="12" class="d_dai1"><input type="text" value="10" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dd><input type="text" value="D85" class="d_d"></dd>
+                                         <dt><input type="text" value="87" class="d_dai1"><input type="text" value="83" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="20" class="d_dai1"><input type="text" value="18" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         
+                                         <dd><input type="text" value="A90" class="d_d"></dd>
+                                         <dt><input type="text" value="92" class="d_dai1"><input type="text" value="88" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="12" class="d_dai1"><input type="text" value="10" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dd><input type="text" value="D90" class="d_d"></dd>
+                                         <dt><input type="text" value="92" class="d_dai1"><input type="text" value="88" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         <dt><input type="text" value="10" class="d_dai1"><input type="text" value="12" class="d_dai"><i><img src="../images/hengjian.jpg"></i></dt>
+                                         
+                                         
+                                     </dl>
+                                 </div>
+                                 <div class="an_niu_d">
+                                      <b><input type="submit" value="+胸围批量增加1mm" class="zeng_d"><input type="submit" value="-胸围批量减1mm" class="zeng_d"><input type="submit" value="+下胸围间区批量增加1mm" class="zeng_w"><input type="submit" value="-下胸围间区批量减1mm" class="zeng_w"></b>
+                                 </div>
+                                 <div class="an_niu_d1">
+                                      <b><input type="submit" value="保存" class="zeng_d1">
+                                      <input type="submit" value="取消" class="zeng_d1">
+                                      <input type="submit" value="恢复默认" class="zeng_d2"></b>
+                                  </div>
+                              </div>
+                         </div>
+                       </form>
+                    </div>
+            </div>
+        </div>
+       
+    </div>
+<!--网页底部-->
+  <div class="clearfix"></div>
+	<div class="footer">
+    	<div class="foot_wrap">
+        	
+        	<ul class="one">
+            	<li class="fir">新手指南</li>
+                <li><a href="#">操作指南</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">热门问题</a></li>
+            </ul>
+            <ul class="two">
+            	<li class="fir">供应指南</li>
+                <li><a href="#">设置店铺</a></li>
+                <li><a href="#">添加商品</a></li>
+                <li><a href="#">销售发货</a></li>
+            </ul>
+            <ul class="thr">
+            	<li class="fir">分销指南</li>
+                <li><a href="#">选货下单</a></li>
+                <li><a href="#">支付货款</a></li>
+                <li><a href="#">开始代卖</a></li>
+            </ul>
+            <ul class="four">
+            	<li class="fir">支付与提现</li>
+                <li><a href="#">提现方式</a></li>
+                <li><a href="#">充值说明</a></li>
+                <li><a href="#">支付方式</a></li>
+            </ul>
+            <ul class="five">
+            	<li class="fir">会员说明</li>
+                <li><a href="#">供应商</a></li>
+                <li><a href="#">分销商</a></li>
+                <li><a href="#">有问必答</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页底部分菜单-->
+	<div class="nav_foot">
+    	<div class="foot_con">
+            <div class="nav_footer">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">产品大全</a></li>
+                    <li><a href="#">供应中心</a></li>
+                    <li><a href="#">分销中心</a></li>
+                    <li><a href="#">格子铺专区</a></li>
+                    <li class="last"><a href="#">最新资讯</a></li>
+                </ul>
+            </div>
+            <div class="nav_footer_r">
+            	<ul>
+                	<li class="fir">代卖供货:</li>
+                    <li class="one"><a href="#">分销商代卖操作方法</a></li>
+                    <li class="one"><a href="#">店铺管理系统</a></li>
+                    <li class="one"><a href="#">进货流程</a></li>
+                    <li class="one"><a href="#">分销商入口</a></li>
+                    <li class="last one"><a href="#">供应入口</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+<!--网页底部版权-->
+	<div class="footer_last">
+    	<div class="foot_la_wrap">
+        	<div class="foot_con_wrap">
+            	<div class="copy_l">
+                	<ul>
+                    	<li>Copyright © 2013 xiangyunshangwu.com All Rights Reserved 58代卖版权所有</li>
+                        <li>ICP证：京ICP备13019928号</li>
+                    </ul>
+                </div>
+                <div class="safe">
+                	<ul>
+                    	<li><img src="../images/safe1.jpg"/><br/>卖家保证</li>
+                        <li><img src="../images/safe2.jpg"/><br/>商家认证</li>
+                        <li class="last"><img src="../images/safe3.jpg"/><br/>安全交易</li>
+                    </ul>
+                </div>
+                <p><img src="../images/tel.jpg"/></p>
+            </div>
+        </div>
+    </div>
+
+<body>
+</body>
+</html>

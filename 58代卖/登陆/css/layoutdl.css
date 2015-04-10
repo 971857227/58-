@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*选项卡登陆注册切换*/
+.main_wrap{width:1000px;margin:auto;margin-top:45px;}
+.nav_login{width:1000px;height:35px;border-bottom:1px solid #f3f2f2;}
+.nav_login ul{width:500px;height:35px;margin-left:15px;}
+.nav_login ul li{float:left;width:100px;height:35px;line-height:35px;text-align:center;color:#676767;font-weight:bold;cursor:pointer;}
+.nav_login ul li.hover{background:#e21210;color:#FFF;}
+
+/*选项卡登陆注册切换内容*/
+.con_wrap{width:1000px;}
+
+.login{width:955px;height:245px;margin-left:45px;margin-top:40px;}
+.login ul{width:455px;height:245px;border-right:1px solid #d8d8d8;float:left;}
+.login ul li{width:455px;height:30px;line-height:30px;margin-top:20px;}
+.login ul li span{font-size:14px;display:block;width:60px;height:28px;float:left;}
+.input_text{width:210px;height:28px;border:1px solid #e5e5e5;line-height:28px;float:right;}
+.login ul li.yzm p {width:65px;height:28px;float:right;margin-top:-26px;}
+.login ul li.yzm{width:250px;height:28px;}
+.input_yzm{width:70px;float:left;margin-left:27px;display:inline;}
+.login ul li label{width:300px;height:28px;display:block;}
+.login ul li.remember{width:210px;height:28px;margin-left:83px;}
+.login ul li.remember em{font-style:normal;display:block;height:28px;padding:0 5px;background:url(../../images/dltp.jpg) no-repeat right center;float:left;}
+.login ul li.remember em a{color:#666666;text-decoration:none;}
+.input_sub{width:80px;height:31px;background:url(../../images/sub.jpg) no-repeat;cursor:pointer;border:none;color:#FFF;margin-left:83px;margin-top:0px;}
+.input_che{margin-top:7px;float:left;display:block;width:12px;height:12px;}
+
+
+
+
+.login dl{width:315px;float:left;margin-top:10px;margin-left:40px;display:inline;font-family:"宋体";}
+.login dl dt{font-weight:bold;color:#666666;font-size:14px;margin-bottom:30px;}
+.login dl dd{height:30px;line-height:30px;text-align:left;}
+
+
+.reg_wrap{width:445px;margin-top:40px;margin-left:45px;}
+.zc{width:445px;height:90px;}
+.zc li{width:445px;height:30px;line-height:30px;}
+.in_tex{width:210px;height:30px;line-height:30px;float:left;}
+.zc li.fir{margin-top:20px;}
+.zc li span{display:block;height:30px;width:75px;float:left;font-size:14px;}
+.zc li label{width:290px;height:30px;}
+.zc li em{font-style:normal;color:#418400;display:block;width:140px;height:30px;text-align:center;float:right;}
+.zc li i{font-style:normal;color:#840000;display:block;width:140px;height:30px;text-align:center;float:right;text-align:left;}
+
+
+.message_wrap{width:440px;height:350px;border:1px solid #eeeeee;margin-top:5px;overflow:scroll; word-wrap: break-word;word-break: normal;}
+
+.text_wrap{width:405px;margin-top:10px;margin-left:10px;line-height:30px;text-indent:2em;}
+.agree{width:140px;height:30px;margin-top:10px;margin-left:75px;line-height:30px;}
+.agree a{color:#e21210;}
+.agree .in_check{width:10px;height:10px;float:left;margin-top:7px;}
+.agree i{display:block;float:left;width:110px;height:30px;font-style:normal;}
+
+.in_zc,.in_re{width:80px;height:30px;background:url(../../images/zc.jpg) no-repeat;border:none;color:#FFF;cursor:pointer;margin-top:40px;}
+.in_re{margin-left:20px;}
+.in_zc{margin-left:78px;}
+
+
+
+
+
+
+/*----------------------找回密码css----------------------------*/
+.nav_login h1{color:#e21210;font-weight:bold;font-size:14px;}
+
+.login ol{width:455px;height:245px;border-right:1px solid #d8d8d8;float:left;}
+.login ol li{width:455px;height:30px;line-height:30px;margin-top:20px;}
+.login ol li span{font-size:14px;display:block;width:70px;height:28px;float:left;}
+.input_text_1{width:210px;height:28px;border:1px solid #e5e5e5;line-height:28px;float:right;}
+.input_text_2{width:70px;height:28px;border:1px solid #e5e5e5;line-height:28px;float:left;margin-left:16px;}
+.login ol li.yzm p {width:65px;height:28px;float:right;margin-top:-26px;}
+.login ol li.yzm{width:250px;height:28px;}
+.input_yzm{width:70px;float:left;margin-left:27px;display:inline;}
+.login ol li label{width:300px;height:28px;display:block;}
+.login ol li.remember{width:210px;height:28px;margin-left:83px;}
+.login ol li.remember em{font-style:normal;display:block;height:28px;padding:0 5px;background:url(../../images/dltp.jpg) no-repeat right center;float:left;}
+.login ol li.remember em a{color:#666666;text-decoration:none;}
+.input_sub_1{width:80px;height:31px;background:url(../../images/sub.jpg) no-repeat;cursor:pointer;border:none;color:#FFF;margin-left:83px;margin-top:0px;}
+.login ol li.one{color:#e21210;}
+
+
+
+
+
+/*----------------------找回密码css----------------------------*/
+.successful{width:295px;height:100px;margin:auto;margin-top:90px;}
+.successful ul{width:160px;height:50px;margin:auto;}
+.successful ul li{float:left;height:50px;line-height:50px;text-align:center;background:url(../../images/dltp.jpg) no-repeat right center;}
+.successful ul li a{text-decoration:none;color:#666666;padding:0 15px;}
+
+/*----------------------够买成功----------------------------*/
+.successful{width:295px;height:100px;margin:auto;margin-top:90px;}
+.successful ol{width:180px;height:50px;margin:auto;}
+.successful ol li{float:left;height:50px;line-height:50px;text-align:center;background:url(../../images/dltp.jpg) no-repeat right center;}
+.successful ol li a{text-decoration:none;color:#666666;padding:0 15px;}
+
+
+
+
+
+
+
+
+
+

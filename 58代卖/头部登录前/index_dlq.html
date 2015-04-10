@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>58代卖</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/layout_sy.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/bannercss.css" rel="stylesheet" type="text/css"/>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/hgy.js"></script>
+<script src="../js/jquery.touchSlider.js"></script>
+
+<script src="../js/jquery.event.drag-1.5.min.js"></script>
+</head>
+<script>
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<body>
+<!--网页头部-->
+	<div class="header">
+    	<div class="head_wrap">
+        	<p>您好，欢迎来到58代卖</p>
+            <ul>
+            	<li class="wel"><a href="#">登陆</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="we"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页logo 搜索-->
+	<div class="search">
+    	<p title="58代卖"><img src="../images/tp3.jpg"/></p>
+        <div class="nav_list">
+        	<div class="sea">
+                <form>
+                    <input type="text" value="请输入关键字" class="inp_tex" onfocus="if (value =='请输入关键字'){value =''}" onblur="if (value ==''){value='请输入关键字'}">
+                    <input type="submit" class="inp_sub" value="">
+                </form>
+            </div>
+            <ul>
+            	<li class="one">热门搜索：</li>
+                <li class="two"><a href="#">代卖优势</a></li>
+                <li class="two"><a href="#">成功案例</a></li>
+                <li class="two"><a href="#">创业秘籍</a></li>
+                <li class="two tree"><a href="#">商品大全</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页导航-->
+	<div class="nav">
+    	<div class="nav_wrap">
+        	<ul>
+            	<li class="sy"><a href="#">首页</a></li>
+                <li><a href="#">需求中心</a></li>
+                <li><a href="#">供应中心</a></li>
+                <li><a href="#">代卖管理</a></li>
+                <li><a href="#">实体店管理</a></li>
+                <li><a href="#">格子铺专区</a></li>
+                <li class="news"><a href="#">最新资讯</a>
+                	<div class="news_list">
+                    	<dl>
+                        	<dt><a href="#">最新活动</a></dt>
+                            <dt><a href="#">官方公告</a></dt>
+                            <dt><a href="#">热门文章</a></dt>
+                            <dt><a href="#">官方信息</a></dt>
+                           
+                        </dl>
+                    </div>
+                </li>
+                <li class="last"><a href="#">操作指南</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

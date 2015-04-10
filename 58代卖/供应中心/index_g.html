@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>58代卖</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/layout_sy.css" rel="stylesheet" type="text/css"/>
+<link href="../首页/css/bannercss.css" rel="stylesheet" type="text/css"/>
+<link href="css/layout_g2.css" rel="stylesheet" type="text/css"/>
+<link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/hgy.js"></script>
+<script src="../js/jquery.touchSlider.js"></script>
+<script src="../js/jquery.event.drag-1.5.min.js"></script>
+
+</head>
+
+<body>
+<!--网页头部-->
+	<div class="header">
+    	<div class="head_wrap">
+        	<p>您好，欢迎来到58代卖</p>
+            <ul>
+            	<li class="wel"><a href="../登陆/index_dl.html">登陆</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="we"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页logo 搜索-->
+	<div class="search">
+    	<p title="58代卖"><img src="../images/tp3.jpg"/></p>
+        <div class="nav_list">
+        	<div class="sea">
+                <form>
+                    <input type="text" value="请输入关键字" class="inp_tex" onfocus="if (value =='请输入关键字'){value =''}" onblur="if (value ==''){value='请输入关键字'}">
+                    <input type="submit" class="inp_sub" value="">
+                </form>
+            </div>
+            <ul>
+            	<li class="one">热门搜索：</li>
+                <li class="two"><a href="#">代卖优势</a></li>
+                <li class="two"><a href="#">成功案例</a></li>
+                <li class="two"><a href="#">创业秘籍</a></li>
+                <li class="two tree"><a href="#">商品大全</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页导航-->
+	<div class="nav">
+    	<div class="nav_wrap">
+        	<ul>
+            	<li class="sy"><a href="#">首页</a></li>
+                <li><a href="#">需求中心</a></li>
+                <li><a href="#">供应中心</a></li>
+                <li><a href="#">代卖管理</a></li>
+                <li><a href="#">实体店管理</a></li>
+                <li><a href="#">格子铺专区</a></li>
+                <li class="news"><a href="#">最新资讯</a>
+                	<div class="news_list">
+                    	<dl>
+                        	<dt><a href="#">最新活动</a></dt>
+                            <dt><a href="#">官方公告</a></dt>
+                            <dt><a href="#">热门文章</a></dt>
+                            <dt><a href="#">官方信息</a></dt>
+                           
+                        </dl>
+                    </div>
+                </li>
+                <li class="last"><a href="#">操作指南</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页主体内容--> 
+	<div class="main mt_20">
+	    <div class="g_search2 fl">
+		    <ul>
+			    <li>
+				    <h2><b>时间</b><span><img src="../images/g_pull.png" /></span></h2>
+					<p>
+					    <a href="#">时间降序</a>
+						<a href="#">时间升序</a>
+					</P>
+				</li>
+				<li>
+				    <h2><b>价格</b><span><img src="../images/g_pull.png" /></span></h2>
+					<p>
+					    <a href="#">0~100</a>
+						<a href="#">100~200</a>
+						<a href="#">200~1000</a>
+					</P>
+				</li>
+				<li>
+				    <h2><b>退货率</b><span><img src="../images/g_pull.png" /></span></h2>
+					<p>
+					    <a href="#">时间降序</a>
+						<a href="#">时间升序</a>
+					</P>
+				</li>
+ 	 	 	</ul>
+			<form action="" id="g_form0" class="fr" >
+				<div class="g_start">
+					<label>起批价</label>
+					<input type="text" class="g_text3" style="color:#333;" />
+					<span>-</span>
+					<input type="text" class="g_text3" style="color:#333;" />
+				</div>
+				<ul>
+					<li>
+                    	<select style="margin-top:10px;">
+                        	<option>所有产品</option>
+                            <option>时间降序</option>
+                            <option>时间升序</option>
+                        </select>
+					    
+					</li>
+					<li>
+					    
+						<!--地区-->
+						<div class="dd" style="margin-top:5px;z-index:999999;">
+                            <div id="store-selector">
+                                <div class="text"><div></div><b></b></div>                   
+                                <div onclick="$('#store-selector').removeClass('hover')" class="close"></div>
+                            </div><!--store-selector end-->
+                            <div id="store-prompt"><strong></strong></div><!--store-prompt end--->
+                        </div>
+					</li>
+				</ul>
+				<input type="submit" class="g_btn2" value="搜索" style="border:1px #c41917 solid;" />
+			</form>
+		</div>
+		<!--以下为检索结果-->
+		<div class="g_result fl mt_20">
+		    <h2>以下为检索的结果</h2>
+			<div class="g_pictures3 fl">
+			    <a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a><a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+				<a href="#">
+				    <div class="g_pic">
+					    <img src="../images/g_img12.gif" />
+					</div>
+					<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+					<div class="g_price">
+					    <h4>&yen;32.00</h4>
+						<strong><b>764</b>人付款</strong>
+					</div>
+				</a>
+			</div>
+			<div class="clearfix"></div>
+			<!--选页-->
+                            <div class="xuanye_d">
+                             <form>
+                                <p>共104条记录</p>
+                                <dl>
+                                    <dd><a href="#"><img src="../images/sanjiao_d.jpg"></a></dd>
+                                    <dd><a href="#"><img src="../images/sanjiao1_d.gif"></a></dd>
+                                    <dt><a href="#">1</a></dt>
+                                    <dt><a href="#">2</a></dt>
+                                    <dt><a href="#">3</a></dt>
+                                    <dt><a href="#">4</a></dt>
+                                    <dt><a href="#">5</a></dt>
+                                    <dt><a href="#">6</a></dt>
+                                    <dt><a href="#">.....</a></dt>
+                                    <dt><a href="#">11</a></dt>
+                                    <dd><a href="#"><img src="../images/sanjiao2_d.gif"></a></dd>
+                                    <dd><a href="#"><img src="../images/sanjiao3_d.jpg"></a></dd>
+                                </dl>
+                                <ul>
+                                    <li>转到第</li>
+                                    <li><input type="text" class="in_d"></li>
+                                    <li>页</li>
+                                    <li><span><a href="#" style="color:#fff;">确定</a></span></li>
+                                    
+                                </ul>
+                              </form>
+                            </div> 
+		</div>
+		<!--官方公告-->
+		<div class="g_notice fr mt_20">
+		    <div class="g_top fl">
+				<h2><b>官方公告</b><a href="#">更多>></a></h2>
+				<ul>
+					<li><nobr><a href="#">关于供应商的一些说明...</a></nobr></li>
+					<li><nobr><a href="#">致58代卖新会员的一封信...</a></nobr></li>
+					<li><nobr><a href="#">58代卖预招商现在开始，火爆</a></nobr></li>
+					<li><nobr><a href="#">58代卖网站最近怎么没有招商</a></nobr></li>
+				</ul>
+			</div>
+			<div class="g_bottom0 fl">
+			    <h2><b>官方公告</b><a href="#">更多>></a></h2>
+				<div class="g_pictures4 fl">
+					<a href="#">
+						<div class="g_pic">
+							<img src="../images/g_img13.gif" />
+						</div>
+						<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+						<div class="g_price">
+							<h4>&yen;32.00</h4>
+							<strong><b>764</b>人付款</strong>
+						</div>
+					</a>
+					<a href="#">
+						<div class="g_pic">
+							<img src="../images/g_img13.gif" />
+						</div>
+						<p>妖姬儿包袋 2014秋冬新款超高人气学</p>
+						<div class="g_price">
+							<h4>&yen;32.00</h4>
+							<strong><b>764</b>人付款</strong>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="clearfix"></div>
+<!--网页底部-->
+	<div class="footer">
+    	<div class="foot_wrap">
+        	
+        	<ul class="one">
+            	<li class="fir">新手指南</li>
+                <li><a href="#">操作指南</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">热门问题</a></li>
+            </ul>
+            <ul class="two">
+            	<li class="fir">供应指南</li>
+                <li><a href="#">设置店铺</a></li>
+                <li><a href="#">添加商品</a></li>
+                <li><a href="#">销售发货</a></li>
+            </ul>
+            <ul class="thr">
+            	<li class="fir">分销指南</li>
+                <li><a href="#">选货下单</a></li>
+                <li><a href="#">支付货款</a></li>
+                <li><a href="#">开始代卖</a></li>
+            </ul>
+            <ul class="four">
+            	<li class="fir">支付与提现</li>
+                <li><a href="#">提现方式</a></li>
+                <li><a href="#">充值说明</a></li>
+                <li><a href="#">支付方式</a></li>
+            </ul>
+            <ul class="five">
+            	<li class="fir">会员说明</li>
+                <li><a href="#">供应商</a></li>
+                <li><a href="#">分销商</a></li>
+                <li><a href="#">有问必答</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页底部分菜单-->
+	<div class="nav_foot">
+    	<div class="foot_con">
+            <div class="nav_footer">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">产品大全</a></li>
+                    <li><a href="#">供应中心</a></li>
+                    <li><a href="#">分销中心</a></li>
+                    <li><a href="#">格子铺专区</a></li>
+                    <li class="last"><a href="#">最新资讯</a></li>
+                </ul>
+            </div>
+            <div class="nav_footer_r">
+            	<ul>
+                	<li class="fir">代卖供货:</li>
+                    <li class="one"><a href="#">分销商代卖操作方法</a></li>
+                    <li class="one"><a href="#">店铺管理系统</a></li>
+                    <li class="one"><a href="#">进货流程</a></li>
+                    <li class="one"><a href="#">分销商入口</a></li>
+                    <li class="last one"><a href="#">供应入口</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+<!--网页底部版权-->
+	<div class="footer_last">
+    	<div class="foot_la_wrap">
+        	<div class="foot_con_wrap">
+            	<div class="copy_l">
+                	<ul>
+                    	<li>Copyright © 2013 xiangyunshangwu.com All Rights Reserved 58代卖版权所有</li>
+                        <li>ICP证：京ICP备13019928号</li>
+                    </ul>
+                </div>
+                <div class="safe">
+                	<ul>
+                    	<li><img src="../images/safe1.jpg"/><br/>卖家保证</li>
+                        <li><img src="../images/safe2.jpg"/><br/>商家认证</li>
+                        <li class="last"><img src="../images/safe3.jpg"/><br/>安全交易</li>
+                    </ul>
+                </div>
+                <p><img src="../images/tel.jpg"/></p>
+            </div>
+        </div>
+    </div>
+    <script src="css/location.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<ul>
+                    <asp:Repeater ID="Rpt_Class1" runat="server">
+                    <ItemTemplate><li><input type="radio" name="Rdo_Class1" value="<%# Eval("NodeID") %>" /><%# Eval("NodeName") %></li></ItemTemplate>
+                    </asp:Repeater>
+                 </ul>
+
+                 <ul style="margin-left:20px;">
+                    <asp:Repeater ID="Rpt_Class2" runat="server">
+                    <ItemTemplate><li><input type="radio" name="Rdo_Class2" value="<%# Eval("NodeID") %>" /><%# Eval("NodeName") %></li></ItemTemplate>
+                    </asp:Repeater>
+                 </ul>
+
+                 <ul style="margin-left:20px;">
+                    <asp:Repeater ID="Rpt_Class3" runat="server">
+                    <ItemTemplate><li><input type="radio" name="Rdo_Class3" value="<%# Eval("NodeID") %>" /><%# Eval("NodeName") %></li></ItemTemplate>
+                    </asp:Repeater>
+                 </ul>

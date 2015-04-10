@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>58代卖</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="css/layout_sy.css" rel="stylesheet" type="text/css"/>
+<link href="css/bannercss.css" rel="stylesheet" type="text/css"/>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/hgy.js"></script>
+<script src="../js/jquery.touchSlider.js"></script>
+
+<script src="../js/jquery.event.drag-1.5.min.js"></script>
+</head>
+<script>
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+		},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $("#btn_next").click();}, 5000);
+	})
+});
+</script>
+<body>
+<!--网页头部-->
+	<div class="header">
+    	<div class="head_wrap">
+        	<p>您好，欢迎来到58代卖</p>
+            <ul>
+            	<li class="wel"><a href="../登陆/index_dl.html">登陆</a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li class="we"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页logo 搜索-->
+	<div class="search">
+    	<p title="58代卖"><img src="../images/tp3.jpg"/></p>
+        <div class="nav_list">
+        	<div class="sea">
+                <form>
+                    <input type="text" value="请输入关键字" class="inp_tex" onfocus="if (value =='请输入关键字'){value =''}" onblur="if (value ==''){value='请输入关键字'}">
+                    <input type="submit" class="inp_sub" value="">
+                </form>
+            </div>
+            <ul>
+            	<li class="one">热门搜索：</li>
+                <li class="two"><a href="#">代卖优势</a></li>
+                <li class="two"><a href="#">成功案例</a></li>
+                <li class="two"><a href="#">创业秘籍</a></li>
+                <li class="two tree"><a href="#">商品大全</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页导航-->
+	<div class="nav">
+    	<div class="nav_wrap">
+        	<ul>
+            	<li class="sy"><a href="#">首页</a></li>
+                <li><a href="#">需求中心</a></li>
+                <li><a href="#">供应中心</a></li>
+                <li><a href="../代卖管理/index_daimaiguanli.html">代卖管理</a></li>
+                <li><a href="../实体店管理/yijinhuowu.html">实体店管理</a></li>
+                <li><a href="#">格子铺专区</a></li>
+                <li class="news"><a href="#">最新资讯</a>
+                	<div class="news_list">
+                    	<dl>
+                        	<dt><a href="#">最新活动</a></dt>
+                            <dt><a href="#">官方公告</a></dt>
+                            <dt><a href="#">热门文章</a></dt>
+                            <dt><a href="#">官方信息</a></dt>
+                           
+                        </dl>
+                    </div>
+                </li>
+                <li class="last"><a href="#">操作指南</a></li>
+            </ul>
+        </div>
+    </div>
+<!--banner滚动-->  
+    <div class="main_visual">
+                <div class="flicking_con">
+                	<div class="flicking_inner">
+                    <!--<a href="javascript:">1</a>
+                    <a href="javascript:">2</a>
+                    <a href="javascript:">3</a>
+                    <a href="javascript:">4</a>--> <!--如果要加图片这里也要相应打开数字-->
+                    <a href="javascript:">5</a>
+                    <a href="javascript:">6</a>
+               	 </div>
+            </div>
+			<div class="main_image">
+				<ul>					
+					<!--如果要加图片上面也要相应打开数字-->
+					<li><a href="#"><span class="img_5"></span></a></li>
+                    <li><a href="#"><span class="img_6"></span></a></li>
+				</ul>
+				<a href="javascript:;" id="btn_prev"></a>
+				<a href="javascript:;" id="btn_next"></a>
+			</div>
+			</div>
+<!--网页主体内容--> 
+	<div class="main">
+<!--需求中心--> 
+		<div class="need">
+        	<div class="need_l">
+            	<p><img src="../images/syneed.jpg"/></p>
+                
+                <div class="wares">
+                	<div class="btn_l"><img src="../images/btn_l.jpg"/></div>
+                    
+                    <div class="list_win">
+                    	<div class="list_wrap">
+                        	<ul style="margin-left:0;">
+                            	<li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong>￥1000</strong>.00</i><em>100平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                                <li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong>￥2000</strong>.00</i><em>100平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                                <li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong>￥3000</strong>.00</i><em>100平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                                <li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong>￥4000</strong>.00</i><em>100平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                                <li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong><strong>￥500</strong>.00</strong></i><em>100平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                                <li><a href="#"><img src="../images/cp1.jpg"/></a>
+                                <b class="money"><i><strong>￥600000</strong>.00</i><em>10000平米</em></b>
+                                <span class="message">零租金全国连锁格子铺招店主</span></li>
+                            </ul>
+                            
+                        
+                        </div>
+                    </div>
+                    	
+                    <div class="btn_r"><img src="../images/btn_r.jpg"/></div>
+                </div>
+                
+            </div>
+            <div class="need_r">
+            	<div class="nav_change">
+                	<div class="nav_more">
+                        <div class="nav_pic">
+                            <div class="btn_pr"></div>
+                                <ul>
+                                   
+                                    
+                                </ul>
+                            <div class="btn_nex"></div>
+                            
+                        </div>
+                        <p><a href="#">更多>></a></p>
+                    </div>
+                </div>
+                <div class="pic_win">
+                	<div class="pic_move">
+                    	<ul>
+                        	<li style="margin-top:0;"><a href="#"><img src="../images/gg1.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/gg2.jpg"/></a></li>
+                        	<li><a href="#"><img src="../images/gg1.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/gg2.jpg"/></a></li>
+                        </ul>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--广告信息位-->
+		<div class="news_win">
+        	<div class="news_move">
+            	<div class="content">
+                	<div class="brand">
+                    	<ul>
+                        	<li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="message_list">
+                    	<ul class="message_l">
+							<li><a href="#"><em>14-11-05</em><span>长春多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_c">
+							<li><a href="#"><em>14-11-05</em><span>北京北北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_r">
+							<li><a href="#"><em>14-11-05</em><span>北京北京京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京京好多人的说</span></a></li>                     
+                    	</ul>
+                    </div>
+                    
+                </div>
+                <div class="content">
+                	<div class="brand">
+                    	<ul>
+                        	<li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="message_list">
+                    	<ul class="message_l">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_c">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_r">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                    </div>
+                    
+                </div>
+                <div class="content">
+                	<div class="brand">
+                    	<ul>
+                        	<li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="message_list">
+                    	<ul class="message_l">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_c">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_r">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                    </div>
+                    
+                </div>
+                <div class="content">
+                	<div class="brand">
+                    	<ul>
+                        	<li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/sbanner.jpg"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="message_list">
+                    	<ul class="message_l">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_c">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                        <ul class="message_r">
+							<li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>
+                            <li><a href="#"><em>14-11-05</em><span>北京北京北京北京北京北京好多人的说</span></a></li>                     
+                    	</ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+<!--供应中心-->
+		<div class="supply">
+        	<div class="sup_little">
+            	<p><img src="../images/sygy.jpg"/></p>
+                <div class="nav_more_h">
+                        <div class="nav_pic_h">
+                            <div class="btn_pr_h"></div>
+                                <ul>
+                                   
+                                    
+                                </ul>
+                            <div class="btn_nex_h"></div>
+                            
+                        </div>
+                        <p><a href="#">更多>></a></p>
+                    </div>
+            </div>
+            <div class="busness">
+            	<div class="bus_nav">
+                	<ul>
+                    	<li class="hover">求租格子信息</li>
+                        <li>转让格子信息</li>
+                        <li>推荐格子铺</li>
+                    </ul>
+                    <div class="bus_list">
+                    	<ol>
+                        	<li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                        </ol>
+                        <ol>
+                        	<li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥3320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                        </ol>
+                        <ol>
+                        	<li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥33320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                            <li style="margin-right:0;"><a href="#"><img src="../images/mtpic.jpg"/></a><br/><em>3.8折高腰牛仔裤 错过请等明年</em><br/><span><i><strong>￥320</strong>.00</i><div class="men"><b>764</b>人付款</div></span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--网页底部-->
+	<div class="footer">
+    	<div class="foot_wrap">
+        	
+        	<ul class="one">
+            	<li class="fir">新手指南</li>
+                <li><a href="#">操作指南</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">热门问题</a></li>
+            </ul>
+            <ul class="two">
+            	<li class="fir">供应指南</li>
+                <li><a href="#">设置店铺</a></li>
+                <li><a href="#">添加商品</a></li>
+                <li><a href="#">销售发货</a></li>
+            </ul>
+            <ul class="thr">
+            	<li class="fir">分销指南</li>
+                <li><a href="#">选货下单</a></li>
+                <li><a href="#">支付货款</a></li>
+                <li><a href="#">开始代卖</a></li>
+            </ul>
+            <ul class="four">
+            	<li class="fir">支付与提现</li>
+                <li><a href="#">提现方式</a></li>
+                <li><a href="#">充值说明</a></li>
+                <li><a href="#">支付方式</a></li>
+            </ul>
+            <ul class="five">
+            	<li class="fir">会员说明</li>
+                <li><a href="#">供应商</a></li>
+                <li><a href="#">分销商</a></li>
+                <li><a href="#">有问必答</a></li>
+            </ul>
+        </div>
+    </div>
+<!--网页底部分菜单-->
+	<div class="nav_foot">
+    	<div class="foot_con">
+            <div class="nav_footer">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">产品大全</a></li>
+                    <li><a href="#">供应中心</a></li>
+                    <li><a href="#">分销中心</a></li>
+                    <li><a href="#">格子铺专区</a></li>
+                    <li class="last"><a href="#">最新资讯</a></li>
+                </ul>
+            </div>
+            <div class="nav_footer_r">
+            	<ul>
+                	<li class="fir">代卖供货:</li>
+                    <li class="one"><a href="#">分销商代卖操作方法</a></li>
+                    <li class="one"><a href="#">店铺管理系统</a></li>
+                    <li class="one"><a href="#">进货流程</a></li>
+                    <li class="one"><a href="#">分销商入口</a></li>
+                    <li class="last one"><a href="#">供应入口</a></li>
+                </ul>
+            </div>
+         </div>
+    </div>
+<!--网页底部版权-->
+	<div class="footer_last">
+    	<div class="foot_la_wrap">
+        	<div class="foot_con_wrap">
+            	<div class="copy_l">
+                	<ul>
+                    	<li>Copyright © 2013 xiangyunshangwu.com All Rights Reserved 58代卖版权所有</li>
+                        <li>ICP证：京ICP备13019928号</li>
+                    </ul>
+                </div>
+                <div class="safe">
+                	<ul>
+                    	<li><img src="../images/safe1.jpg"/><br/>卖家保证</li>
+                        <li><img src="../images/safe2.jpg"/><br/>商家认证</li>
+                        <li class="last"><img src="../images/safe3.jpg"/><br/>安全交易</li>
+                    </ul>
+                </div>
+                <p><img src="../images/tel.jpg"/></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

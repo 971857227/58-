@@ -1,0 +1,54 @@
+@charset "utf-8"
+/* CSS Document */
+
+.clear{ clear:both;}
+a{text-decoration:none;}
+
+/*///////////////*/
+
+/*操作流程*/
+
+.czlc_content{ width:1002px; height:1750px;}
+.czlc_left{ float:left;width:170px; }
+.czlc_ld {border-top:1px #f0f0f0 solid;}
+.czlc_ld p{ float:left; height:39px; background:#FFF;width:156px; line-height:39px; padding-left:12px; color:#e21210; font-weight:bold; font-size:14px;border:1px #f0f0f0 solid;border-top:none;}
+.czlc_ld p b{ float:right; margin-right:20px; /*IE7*/*margin-top:18px;}
+.czlc_ld ul{ float:left; width:170px;background:#f7f7f7;}
+.czlc_ld ul li{ float:left; width:170px; height:39px; line-height:39px; border-bottom:1px solid #efefef; }
+.czlc_ld ul li span{ background:url(../../images/jiao2_d.gif) no-repeat right; width:5px; height:9px; float:right; margin-top:17px; margin-right:10px;}
+.czlc_ld ul li.hover a{width:145px; height:39px; background:#e21210; color:#ffffff; font-weight:bold;}
+.czlc_ld ul li.hover a span{ background:url(../../images/jiao3_d.gif) no-repeat right; width:5px; height:9px; float:right; margin-top:17px; margin-right:10px;}
+.czlc_ld ul li a{ padding-left:25px; color:#636363; display:block;}
+.czlc_ld ul li a:hover{ width:145px; height:39px; background:#e21210; color:#ffffff; font-weight:bold;}
+.czlc_ld ul li a:hover span{ background:url(../../images/jiao3_d.gif) no-repeat right; width:5px; height:9px; float:right; margin-top:17px; margin-right:10px;}
+
+
+
+
+
+
+.czlc_right{ float:left; margin-left:30px;}
+.czlc_right .czlc_l_top{}
+.czlc_right .czlc_l_top span{ display:block; width:795px; height:35px; line-height:35px; border-bottom:1px solid #eee; margin-bottom:15px;}
+.czlc_right .czlc_l_top span i{ font-size:18px;color:#e21210; font-weight:bold; font-style:normal;}
+.czlc_right .czlc_l_top span em{ font-size:26px;color:#e6e6e6; font-weight:bold; margin-left:15px;}
+.czlc_right .czlc_l_top p{ line-height:25px;color:#666; margin-left:10px;}
+
+.czlc_right .czlc_bottom{ margin-top:35px;margin-left:10px; width:575px;}
+.czlc_right .czlc_bottom>p{ line-height:25px;width:575px;}
+.czlc_right .czlc_bottom div{}
+.czlc_right .czlc_bottom div span{color:#666; font-weight:bold; display:block; margin-bottom:42px; width:575px;}
+.czlc_right .czlc_bottom div img{ float:left;}
+.czlc_right .czlc_bottom div p{ line-height:25px; float:left; margin-left:15px; margin-top:20px; margin-bottom:35px; width:235px;}
+.czlc_right .czlc_bottom div p i{color:#e21210; font-style:normal;}
+.czlc_right .czlc_bottom div p a{color:#e21210; text-decoration:none;}
+.czlc_right .czlc_bottom div p a:hover{text-decoration:underline;}
+
+
+
+
+
+
+
+
+
